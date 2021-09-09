@@ -1,0 +1,5 @@
+D:\Greenwich University\1670 - APPLICATION DEVELOPMENT\FPT_SYSTEM1\FPT_SYSTEM\Events.Data\obj\Release\net5.0\Events.Data.csproj.AssemblyReference.cache
+D:\Greenwich University\1670 - APPLICATION DEVELOPMENT\FPT_SYSTEM1\FPT_SYSTEM\Events.Data\obj\Release\net5.0\Events.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Greenwich University\1670 - APPLICATION DEVELOPMENT\FPT_SYSTEM1\FPT_SYSTEM\Events.Data\obj\Release\net5.0\Events.Data.AssemblyInfoInputs.cache
+D:\Greenwich University\1670 - APPLICATION DEVELOPMENT\FPT_SYSTEM1\FPT_SYSTEM\Events.Data\obj\Release\net5.0\Events.Data.AssemblyInfo.cs
+D:\Greenwich University\1670 - APPLICATION DEVELOPMENT\FPT_SYSTEM1\FPT_SYSTEM\Events.Data\obj\Release\net5.0\Events.Data.csproj.CoreCompileInputs.cache

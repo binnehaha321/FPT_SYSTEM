@@ -4,11 +4,6 @@
 }
 <h2>TRAINER LIST</h2>
 
-<p>
-    @Html.ActionLink("Assign", "AssignTrainerToCourse", new { @class = "assignbutton" })
-</p>
-
-
 <table class="table">
     <tr>
         <th>
@@ -75,3 +70,6 @@
         </tr>
     }
 </table>
+<button type="button" class="btn btn-success" onclick="location.href='@Url.Action("AssignTrainerToCourse")'">
+    Assign
+</button>
