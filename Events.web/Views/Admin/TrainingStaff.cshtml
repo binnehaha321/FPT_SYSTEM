@@ -4,11 +4,6 @@
 }
 <h2>STAFF</h2>
 
-<p>
-    @Html.ActionLink("Create", "Register", "Account")
-</p>
-
-
 <table class="table">
     <tr style="background-color: darkorange">
         <th>
@@ -33,6 +28,7 @@
             @Html.DisplayNameFor(model => model.Location)
         </th>
     </tr>
+    
     @foreach (var item in Model)
     {
         <tr>
@@ -64,3 +60,6 @@
         </tr>
     }
 </table>
+    <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("Register", "Account")'">
+        Create New
+    </button>

@@ -5,8 +5,6 @@
 
     <h2>ROLE LIST</h2>
 
-    @Html.ActionLink("Create Role", "RoleCreate", "Admin")
-
 <div>
     <table class="table">
         <tr style="background-color: darkorange">
@@ -23,4 +21,7 @@
             </tr>
         }
     </table>
+</div>
+<div class="btn btn-success">
+    @Html.ActionLink("Create", "RoleCreate", "Admin", new { style = "text-decoration: none; color: #FFF" })
 </div>

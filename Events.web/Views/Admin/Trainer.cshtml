@@ -4,10 +4,6 @@
 }
 <h2>TRAINER</h2>
 
-<p>
-    @Html.ActionLink("Create", "Register", "Account")
-</p>
-
 <table class="table">
     <tr style="background-color: darkorange">
         <th>
@@ -63,3 +59,7 @@
         </tr>
     }
 </table>
+
+<button type="button" class="btn btn-success" onclick="location.href='@Url.Action("Register", "Account")'">
+    Create New
+</button>
