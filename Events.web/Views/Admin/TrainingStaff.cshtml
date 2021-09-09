@@ -5,7 +5,7 @@
 <h2>STAFF</h2>
 
 <table class="table">
-    <tr style="background-color: darkorange">
+    <tr>
         <th>
             @Html.DisplayNameFor(model => model.UserName)
         </th>
@@ -28,7 +28,6 @@
             @Html.DisplayNameFor(model => model.Location)
         </th>
     </tr>
-    
     @foreach (var item in Model)
     {
         <tr>
@@ -54,12 +53,16 @@
                 @Html.DisplayFor(modelItem => item.Location)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("Edit", new { id = item.Id })'">
+                    Edit
+                </button>
+                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("Delete", new { id = item.Id })'">
+                    Delete
+                </button>
             </td>
         </tr>
     }
 </table>
-    <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("Register", "Account")'">
-        Create New
-    </button>
+<button type="button" class="btn btn-success" onclick="location.href='@Url.Action("Register", "Account")'">
+    Create New
+</button>

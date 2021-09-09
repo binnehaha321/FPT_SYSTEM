@@ -11,7 +11,7 @@ namespace Events.web.Controllers
     [MyCustomAuthorize(Roles = "Trainer , Trainee")]
     public class TrainController : BaseController
     {
-        
+
         public ActionResult CourseAssigned()
         {
             List<Course> courses = new List<Course> { };

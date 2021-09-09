@@ -86,7 +86,7 @@ namespace Events.web.Controllers
                 .FirstOrDefault();
             if (accountToEdit == null)
             {
-                return this.RedirectToAction("TrainingStaff", "Admin");
+                return this.RedirectToAction("Trainer", "TrainingStaff");
             }
 
             if (user != null && this.ModelState.IsValid)
@@ -99,7 +99,7 @@ namespace Events.web.Controllers
                 accountToEdit.Location = user.Location;
 
                 this.Db.SaveChanges();
-                return RedirectToAction("TrainingStaff", "Admin");
+                return RedirectToAction("Trainer", "TrainingStaff");
             }
             return this.View(user);
         }
@@ -224,13 +224,13 @@ namespace Events.web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AssignTrainerToCourse(string[] user , int courseid)
+        public ActionResult AssignTrainerToCourse(string[] user, int courseid)
         {
             if (!ModelState.IsValid)
             {
                 return Trainer();
             }
-            foreach (var u in user )
+            foreach (var u in user)
             {
                 var x = Db.CoursesAssigned
                     .Where(a => a.UserId == u && a.CourseId == courseid)

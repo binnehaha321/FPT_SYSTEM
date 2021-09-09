@@ -121,7 +121,7 @@ namespace Events.web.Controllers
         {
             Db.Roles.Add(Role);
             Db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Role", "Admin");
         }
     }
 }
