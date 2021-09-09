@@ -5,8 +5,6 @@
 
 <h2>COURSE CATEGORIES</h2>
 
-@Html.ActionLink("Create Category", "CourseCategoryCreate", "TrainingStaff")
-
 <table class="table">
     <tr>
         <th>Id</th>
@@ -22,3 +20,7 @@
         </tr>
     }
 </table>
+
+<button type="button" class="btn btn-success" onclick="location.href='@Url.Action("CourseCategoryCreate", "TrainingStaff")'">
+    Create Category
+</button>

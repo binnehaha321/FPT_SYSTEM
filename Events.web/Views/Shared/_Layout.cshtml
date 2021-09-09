@@ -27,8 +27,8 @@
                         }
                         @if (User.IsInRole("TrainingStaff"))
                         {
-                            <li>@Html.ActionLink("COURSE", "Course", "TrainingStaff", null, htmlAttributes: new { style = "color: #FFF; font-size: 14px" })</li>
                             <li>@Html.ActionLink("COURSE CATEGORY", "CourseCategory", "TrainingStaff", null, htmlAttributes: new { style = "color: #FFF; font-size: 14px" })</li>
+                            <li>@Html.ActionLink("COURSE", "Course", "TrainingStaff", null, htmlAttributes: new { style = "color: #FFF; font-size: 14px" })</li>
                             <li>@Html.ActionLink("TRAINEE", "Trainee", "TrainingStaff", null, htmlAttributes: new { style = "color: #FFF; font-size: 14px" })</li>
                             <li>@Html.ActionLink("TRAINER", "Trainer", "TrainingStaff", null, htmlAttributes: new { style = "color: #FFF; font-size: 14px" })</li>
                         }

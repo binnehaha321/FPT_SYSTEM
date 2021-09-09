@@ -4,14 +4,13 @@
     ViewBag.Title = "TrainerEdit";
 }
 
-<h2>CHANGING TRAINER PROFILE</h2>
+<h2>CHANGING PROFILE</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
 <div class="form-horizontal">
-    <h4>ApplicationUser</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.Id)
@@ -73,5 +72,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Trainee", "TrainingStaff")
 </div>
