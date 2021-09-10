@@ -23,3 +23,10 @@ D:\Greenwich University\1670 - APPLICATION DEVELOPMENT\FPT_SYSTEM1\FPT_SYSTEM\Ev
 D:\Greenwich University\1670 - APPLICATION DEVELOPMENT\FPT_SYSTEM1\FPT_SYSTEM\Events.Data\obj\Debug\net5.0\Events.Data.AssemblyInfoInputs.cache
 D:\Greenwich University\1670 - APPLICATION DEVELOPMENT\FPT_SYSTEM1\FPT_SYSTEM\Events.Data\obj\Debug\net5.0\Events.Data.AssemblyInfo.cs
 D:\Greenwich University\1670 - APPLICATION DEVELOPMENT\FPT_SYSTEM1\FPT_SYSTEM\Events.Data\obj\Debug\net5.0\Events.Data.csproj.CoreCompileInputs.cache
+D:\Greenwich University\1670 - APPLICATION DEVELOPMENT\FPT_SYSTEM1\FPT_SYSTEM\Events.Data\bin\Debug\net5.0\Events.Data.deps.json
+D:\Greenwich University\1670 - APPLICATION DEVELOPMENT\FPT_SYSTEM1\FPT_SYSTEM\Events.Data\bin\Debug\net5.0\Events.Data.dll
+D:\Greenwich University\1670 - APPLICATION DEVELOPMENT\FPT_SYSTEM1\FPT_SYSTEM\Events.Data\bin\Debug\net5.0\ref\Events.Data.dll
+D:\Greenwich University\1670 - APPLICATION DEVELOPMENT\FPT_SYSTEM1\FPT_SYSTEM\Events.Data\bin\Debug\net5.0\Events.Data.pdb
+D:\Greenwich University\1670 - APPLICATION DEVELOPMENT\FPT_SYSTEM1\FPT_SYSTEM\Events.Data\obj\Debug\net5.0\Events.Data.dll
+D:\Greenwich University\1670 - APPLICATION DEVELOPMENT\FPT_SYSTEM1\FPT_SYSTEM\Events.Data\obj\Debug\net5.0\ref\Events.Data.dll
+D:\Greenwich University\1670 - APPLICATION DEVELOPMENT\FPT_SYSTEM1\FPT_SYSTEM\Events.Data\obj\Debug\net5.0\Events.Data.pdb
