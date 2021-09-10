@@ -6,7 +6,7 @@
 <h2>COURSE LIST</h2>
 
 <table class="table">
-    <tr style="background-color: darkorange">
+    <tr style="background-color: #f26e21">
         <th>Id</th>
         <th>Name</th>
         <th>Category</th>
@@ -19,6 +19,14 @@
             <td>@course.Name</td>
             <td>@course.CourseCategory.Name</td>
             <td>@course.Description</td>
+            <td>
+                <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("CourseEdit", new { id = course.Id })'">
+                    Edit
+                </button>
+                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("CourseDelete", new { id = course.Id })'">
+                    Delete
+                </button>
+            </td>
         </tr>
     }
 </table>

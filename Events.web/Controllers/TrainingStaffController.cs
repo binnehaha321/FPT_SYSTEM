@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -102,6 +103,62 @@ namespace Events.web.Controllers
                 return RedirectToAction("Trainer", "TrainingStaff");
             }
             return this.View(user);
+        }
+        [HttpGet]
+        public ActionResult CourseCategoryEdit(int id)
+        {
+            var courseCategoryToEdit = this.Db.CourseCategories
+                .Where(u => u.Id == id)
+                .FirstOrDefault();
+            if (courseCategoryToEdit == null)
+            {
+                var PreviousUrl = System.Web.HttpContext.Current.Request.UrlReferrer.ToString();
+                return this.Redirect(PreviousUrl);
+            }
+            return this.View(courseCategoryToEdit);
+        }
+
+        [HttpPost]
+        public ActionResult CourseCategoryEdit(int id, CourseCategory coursecate)
+        {
+            var courseCategoryToEdit = this.Db.CourseCategories
+                .Where(u => u.Id == id)
+                .FirstOrDefault();
+            if (courseCategoryToEdit == null)
+            {
+                return this.RedirectToAction("CourseCategory", "TrainingStaff");
+            }
+
+            if (coursecate != null && this.ModelState.IsValid)
+            {
+                courseCategoryToEdit.Name = coursecate.Name;
+                courseCategoryToEdit.Description = coursecate.Description;
+
+
+                this.Db.SaveChanges();
+                return RedirectToAction("CourseCategory", "TrainingStaff");
+            }
+            return this.View(coursecate);
+        }
+        public ActionResult CourseCategoryDelete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            CourseCategory courseCategory = Db.CourseCategories.Find(id);
+            if (courseCategory == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                Db.CourseCategories.Remove(courseCategory);
+                Db.SaveChanges();
+                return this.RedirectToAction("CourseCategory", "TrainingStaff");
+            }
+            return View(courseCategory);
         }
 
         [HttpGet]
@@ -224,13 +281,13 @@ namespace Events.web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AssignTrainerToCourse(string[] user, int courseid)
+        public ActionResult AssignTrainerToCourse(string[] user , int courseid)
         {
             if (!ModelState.IsValid)
             {
                 return Trainer();
             }
-            foreach (var u in user)
+            foreach (var u in user )
             {
                 var x = Db.CoursesAssigned
                     .Where(a => a.UserId == u && a.CourseId == courseid)
@@ -308,6 +365,63 @@ namespace Events.web.Controllers
                 }
             }
             return RedirectToAction("Trainee");
+        }
+        [HttpGet]
+        public ActionResult CourseEdit(int id)
+        {
+            var courseToEdit = this.Db.Courses
+                .Where(u => u.Id == id)
+                .FirstOrDefault();
+            if (courseToEdit == null)
+            {
+                var PreviousUrl = System.Web.HttpContext.Current.Request.UrlReferrer.ToString();
+                return this.Redirect(PreviousUrl);
+            }
+            return this.View(courseToEdit);
+        }
+
+        [HttpPost]
+        public ActionResult CourseEdit(int id, Course course)
+        {
+            var courseToEdit = this.Db.Courses
+                .Where(u => u.Id == id)
+                .FirstOrDefault();
+            if (courseToEdit == null)
+            {
+                return this.RedirectToAction("Course", "TrainingStaff");
+            }
+
+            if (course != null && this.ModelState.IsValid)
+            {
+                courseToEdit.Name = course.Name;
+                courseToEdit.CourseCategory = course.CourseCategory;
+                courseToEdit.Description = course.Description;
+
+
+                this.Db.SaveChanges();
+                return RedirectToAction("Course", "TrainingStaff");
+            }
+            return this.View(course);
+        }
+        public ActionResult CourseDelete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Course course = Db.Courses.Find(id);
+            if (course == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                Db.Courses.Remove(course);
+                Db.SaveChanges();
+                return this.RedirectToAction("Course", "TrainingStaff");
+            }
+            return View(course);
         }
     }
 }
