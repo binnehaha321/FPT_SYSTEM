@@ -281,13 +281,13 @@ namespace Events.web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AssignTrainerToCourse(string[] user , int courseid)
+        public ActionResult AssignTrainerToCourse(string[] user, int courseid)
         {
             if (!ModelState.IsValid)
             {
                 return Trainer();
             }
-            foreach (var u in user )
+            foreach (var u in user)
             {
                 var x = Db.CoursesAssigned
                     .Where(a => a.UserId == u && a.CourseId == courseid)
