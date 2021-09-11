@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Events.web.Models.ApplicationUser>
+@{
+    ViewBag.Title = "TrainingStaff";
+}
+<h2>STAFF</h2>
+
+<table class="table">
+    <tr style="background-color: #f26e21">
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DoB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Education)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ToeicScore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Education)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ToeicScore)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("Edit", new { id = item.Id })'">
+                    Edit
+                </button>
+                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("Delete", new { id = item.Id })'">
+                    Delete
+                </button>
+            </td>
+        </tr>
+    }
+</table>
+<button type="button" class="btn btn-success" onclick="location.href='@Url.Action("Register", "Account")'">
+    Create New
+</button>

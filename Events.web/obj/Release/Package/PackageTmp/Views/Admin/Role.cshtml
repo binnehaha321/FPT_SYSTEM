@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Microsoft.AspNet.Identity.EntityFramework.IdentityRole>
+@{
+    ViewBag.Title = "Role";
+}
+
+    <h2>ROLE LIST</h2>
+
+<div>
+    <table class="table">
+        <tr style="background-color: #f26e21">
+            <th>
+                Role Name
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Name
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<div class="btn btn-success">
+    @Html.ActionLink("Create", "RoleCreate", "Admin", new { style = "text-decoration: none; color: #FFF" })
+</div>

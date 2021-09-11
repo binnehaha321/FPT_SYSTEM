@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Events.web.Models.Course>
+@{
+    ViewBag.Title = "Courses";
+}
+
+<h2>COURSE LIST</h2>
+
+<table class="table">
+    <tr style="background-color: #f26e21">
+        <th>Id</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Description</th>
+    </tr>
+    @foreach (var course in Model)
+    {
+        <tr>
+            <td>@course.Id</td>
+            <td>@course.Name</td>
+            <td>@course.CourseCategory.Name</td>
+            <td>@course.Description</td>
+        </tr>
+    }
+</table>
+<button type="button" class="btn btn-success" onclick="location.href='@Url.Action("CourseAssigned", "Train")'">
+    View assigned courses
+</button>

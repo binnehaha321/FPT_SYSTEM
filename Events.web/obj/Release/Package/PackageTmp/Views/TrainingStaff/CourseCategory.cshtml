@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Events.web.Models.CourseCategory>
+@{
+    ViewBag.Title = "Course Categories";
+}
+
+<h2>COURSE CATEGORIES</h2>
+
+<table class="table">
+    <tr style="background-color: #f26e21">
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+    </tr>
+    @foreach (var category in Model)
+    {
+<tr>
+    <td>@category.Id</td>
+    <td>@category.Name</td>
+    <td>@category.Description</td>
+    <td>
+        <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("CourseCategoryEdit", new { id = category.Id })'">
+            Edit
+        </button>
+        <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("CourseCategoryDelete", new { id = category.Id })'">
+            Delete
+        </button>
+    </td>
+</tr>
+    }
+</table>
+
+<button type="button" class="btn btn-success" onclick="location.href='@Url.Action("CourseCategoryCreate", "TrainingStaff")'">
+    Create Category
+</button>

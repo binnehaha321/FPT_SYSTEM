@@ -6,10 +6,6 @@
     var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
     if (loginProviders.Count() == 0) {
         <div style="text-align: center">
-            <input type="button" name="service-login" value="Login with another service" class="btn-info" style="outline: none; border: none; border-radius: 5px; width: 250px; height: 34px; font-size: 14px; margin-bottom: 12px" /> 
-            <p style="font-style: italic; opacity: 0.7;">
-                *Haven't built.
-            </p>
         </div>
     }
     else {

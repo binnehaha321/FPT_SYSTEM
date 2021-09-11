@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPT Training System</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/Site.css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    @RenderSection("styles", required: false)
+</head>
+<body>
+    <div class="navbar navbar-fixed-top" style="background-color: #5cb85c; border-color: #4cae4c">
+        <div class="container">
+            <div class="navbar-header">
+                @Html.ActionLink("FPT Training System", "Index", "Home", new { area = "" }, new { style="color: #FFF; line-height: 51px; font-size: 20px"})
+            </div>
+            <div class="navbar-left" style="float: none!important">
+                    <ul class="nav navbar-nav">
+                        @if ((User.IsInRole("Trainee")) || (User.IsInRole("Trainer")))
+                        {
+                            <li>@Html.ActionLink("MY COURSE", "CourseAssigned", "Train", null, htmlAttributes: new { style = "color: #FFF; font-size: 14px" })</li>
+                            <li>@Html.ActionLink("COURSES", "Course", "Train", null, htmlAttributes: new { style = "color: #FFF; font-size: 14px" })</li>
+                        }
+                        @if (User.IsInRole("TrainingStaff"))
+                        {
+                            <li>@Html.ActionLink("COURSE CATEGORY", "CourseCategory", "TrainingStaff", null, htmlAttributes: new { style = "color: #FFF; font-size: 14px" })</li>
+                            <li>@Html.ActionLink("COURSE", "Course", "TrainingStaff", null, htmlAttributes: new { style = "color: #FFF; font-size: 14px" })</li>
+                            <li>@Html.ActionLink("TRAINEE", "Trainee", "TrainingStaff", null, htmlAttributes: new { style = "color: #FFF; font-size: 14px" })</li>
+                            <li>@Html.ActionLink("TRAINER", "Trainer", "TrainingStaff", null, htmlAttributes: new { style = "color: #FFF; font-size: 14px" })</li>
+                        }
+                        @if (User.IsInRole("Administrator"))
+                        {
+                            <li>@Html.ActionLink("STAFF", "TrainingStaff", "Admin", null, htmlAttributes: new { style = "color: #FFF; font-size: 14px" })</li>
+                            <li>@Html.ActionLink("TRAINER", "Trainer", "Admin", null, htmlAttributes: new { style = "color: #FFF; font-size: 14px" })</li>
+                            <li>@Html.ActionLink("ROLES", "Role", "Admin", null, htmlAttributes: new { style = "color: #FFF; font-size: 14px" })</li>
+                        }
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr>
+        <footer>
+            <p style="color:rgba(0, 0, 255, 0.6);">&copy; @DateTime.Now.Year - ASP.NET Application</p>
+        </footer>
+    </div>
+</body>
+</html>
